@@ -1,0 +1,55 @@
+<script>
+
+function recebeStatus(){
+    var nome = prompt("Qual o nome do time");
+    var vitoria = parseInt(prompt("quantas vitorias"));
+    var derrota = parseInt(prompt("quantas derotas"));
+    var empate = parseInt(prompt("quantos empates"));
+
+    vitoria = vitoria * 3;
+    empate = empate * 1;
+    derrota = 0;
+
+    total = vitoria + empate;
+
+    var time = []
+
+    time.push(nome);
+    time.push(total);
+
+    return  time;
+    
+
+}
+    // return [nome, pontos] : esse comando chama os  resultados em forma de array.
+    //return {nome: nome, resultado: pontos} transforma em um objeto. document.write(time1["nome"]) OU (time1.nome) isso substitui as posições do array. se torna mais legível.
+
+
+    var time1 = recebeStatus();
+    var time2 = recebeStatus();
+    
+    document.write("O " + time1[0] + " esta com " + time1[1] + "<br>");
+    document.write("O " + time2[0] + " esta com"  + time2[1] + "<br>");
+    
+    if(time1[1] > time2[1]){
+        document.write(time1[0] + " Ganhou com " +time1[1] + " pontos");
+
+    }else if(time1[1] == time2[1]){
+        document.write("empate");
+
+    } else{
+        document.write(time2[0] + " Ganhou com " +time2[1] + " pontos");
+
+
+    }
+    
+    //document.write(recebeStatus());
+
+
+    
+
+
+
+
+
+</script>

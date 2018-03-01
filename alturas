@@ -1,0 +1,12 @@
+
+<script>
+    var a1= 1.70;
+    var a2 =  1.90;
+    var a3 = 1.79;
+    var a4 = 1.80;
+    var a5 = 1.73;
+
+    var media = (a1+a2+a3+a4+a5)/5;
+    alert("A media das alturas e " +media);
+
+</script>

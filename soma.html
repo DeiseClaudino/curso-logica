@@ -1,0 +1,39 @@
+<html>
+<meta charset="UTF-8">
+<h1>Uber</h1>
+
+
+<script src="funcoes.js"></script>
+<script>
+
+
+
+var minutos = devolveUmNumeroDecimal("Quantos minutos para distancia percorrida");
+var distancia =  devolveUmNumeroDecimal("Qual a distancia percorrida");
+var valorbase = 2;
+var uber = valorbase  + (distancia * 1.40) + (minutos * 0.26);
+
+
+document.write("<p>Total Uber R$" + formataGrana(uber) + "</p> ");
+
+
+
+</script>
+
+
+<h1>Carro</h1>
+<script>
+var  precoGasolina = parseFloat(prompt("Qual preco da gasolina").replace(",", "."));
+var consumo =parseFloat(prompt("Qual o consumo").replace(",", "."));
+var gasolina = (distancia*precoGasolina)/consumo;
+
+var estacionamento = parseFloat(prompt("Valor da Estacionamento"));
+
+var total =(gasolina + estacionamento);
+document.write("<p>Gasolina " +formata(gasolina,2)+ "</p> ");
+document.write("<p>Estacionamento R$ " +formata (estacionamento,2)+ "</p> ");
+document.write("<p>Total R$ " +formata(total,2)+ "</p> ");
+
+</script>
+
+<html>

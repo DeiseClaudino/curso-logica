@@ -1,0 +1,75 @@
+<meta charset="UTF-8">
+<html>
+<h1><center> Cadastro de aluno </center></h1>
+<title>Academia</title>
+
+<script src="funcoes.js"> </script>
+<script>
+    
+    var nome = prompt("Qual seu nome?");
+    var peso =  devolveUmNumeroDecimal("Qual o seu peso?");
+    var altura =  devolveUmNumeroDecimal("Qual a sua altura?");
+    
+    var dataNasci = prompt("Digite sua data de nascimento Ex: dd/mm/aaaa");
+    var arrayData = dataNasci.split("/");
+    var dia = parseInt(arrayData[0]);
+    var mes = parseInt(arrayData[1]);
+    var ano = parseInt(arrayData[2]);
+    
+    /*var dia = parseInt((prompt("Qual seu dia de nascimento?")));
+    var mes = parseInt((prompt("Qual seu mês de nascimento?")));
+    var nasc = parseInt((prompt("Qual seu ano de nascimento?")));*/
+    //var idade = parseInt(prompt("Informe sua idade"));
+    
+    var imc =  peso/(altura*altura);
+    document.write("<p>Nome: "+ nome + "</p>");
+    document.write("<p>Seu peso: " + formataGrana(peso) + " Kg</p>");
+    document.write("<p>Sua altura:  "+ formataGrana(altura) + " M</p>");
+    document.write("<p>seu imc é:  "+ formataGrana(imc) + "</p>");
+    document.write ("Sua idade é: "+aniversario(mes,dia,ano));
+
+
+    if(imc<17){
+        document.write(" Você está muito abaixo do peso");
+    
+    } else if (imc >= 17 && imc<=18.49){
+        document.write(" Você está abaixo do peso");
+
+    }else if (imc >= 18.5 && imc<= 24.99){
+        document.write(" Você está no peso normal" );
+
+    }else if (imc >=25 && imc<=29.99){
+        document.write(" Você está acima do peso");
+
+    }else if (imc >=30 && imc<=34.99){
+        document.write(" Obesidade I");
+
+    }else if (imc >=35 && imc<=39.99){
+        document.write(" Obesidade II");
+
+    }else if (imc >=40){
+        document.write(" Obesidade III");
+    }
+
+    function aniversario( dia, mes, ano){
+        var mesAtual = new Date().getDate();
+        var diaAtual = new Date().getMonth();
+        var anoAtual =new Date(). getFullYear();
+        idade = anoAtual - ano;
+        if(mes == mesAtual){
+            if(dia >= diaAtual){
+                return idade;
+            }
+        }
+        if (mes > mesAtual){
+            --idade;
+            return idade;
+        }
+        else
+            return idade;
+        }
+
+
+
+ </script>
+</html>

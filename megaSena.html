@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <button id="botaoStart">Start</button>
+        <script src="funcoes.js"></script>
+        <script>
+            function sorteia(num){
+                var ArrayNumero = [];
+                var i = 0;                
+                /*for(var i = 0; i < num; i++){
+                    ArrayNumero.push(Math.round(Math.random()* 60));
+                }*/
+                while(i < num){
+                    var numero = (Math.round(Math.random()* 299));
+                    if(ArrayNumero.contain(numero) == false){
+                        ArrayNumero.push(numero);
+                        i++;                        
+                    }
+                  
+                }                
+                return ArrayNumero;
+            }
+
+            function start(){
+
+                var numeroSorteado = sorteia(300);
+                console.log(numeroSorteado);
+
+
+                var chute = parseInt(prompt("Chute um numero? tente a sorte"));
+                var i = 1;
+                while(chute < 0 || chute > 60 || isNaN(chute)){
+                    
+                    chute = prompt("tente um numero de 1 a 60");                    
+                    if(i >= 4){
+                        alert("gameover !!");  
+                        return;                      
+                    }                    
+                    
+                    i++;                   
+                    
+                }
+
+                if (numeroSorteado.contain(chute)){
+                    alert("você acertou !!");
+                }else{
+                    alert("você errou !!");
+                }
+            }
+                        
+            var botao = document.querySelector("#botaoStart");
+            botao.onclick = start;
+            
+            
+        </script>
+    </body>
+</html>
